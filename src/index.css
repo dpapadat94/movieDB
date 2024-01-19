@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary: #4bb79e;
+  --secondary: #252629;
+}
+body {
+  margin: 0;
+
+  font-family: "Poppins";
+  background: var(--secondary);
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  min-height: 100vh;
+}
+* {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p {
+  margin: 20px 0;
+}
+button {
+  border: 0;
+  padding: 8px;
+  border-radius: 4px;
+  color: white;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+/* navbar */
+header nav {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-content: center;
+  width: 100vw;
+  margin: 0px auto 0 auto;
+  padding: 15px 50px 15px 50px;
+  background-color: #111112;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+header nav h1 {
+  border-bottom: 3px solid var(--primary);
+
+  font-weight: 800;
+}
+header nav a {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+header nav a.active {
+  background: var(--primary);
+}
+
+/* page content */
+main {
+  max-width: 1200px;
+  display: flex;
+  margin: 40px auto;
+}
+
+.container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+.container .box {
+  position: relative;
+  box-shadow: 0 30px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.container .box::before {
+  position: absolute;
+  content: "";
+  top: 99.5%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #727d7b;
+  background-image: linear-gradient(315deg, eb4511 0%, #b02e0c 74%);
+  transition: 0.4s;
+}
+
+.container .box:hover::before {
+  top: 90%;
+}
+.container .box .imgbox {
+  width: 100%;
+  height: 100%;
+}
+
+.container .box .imgbox img {
+  width: 100%;
+  height: 50%;
+  object-fit: fill;
+}
+
+.container .box h1 {
+  font-size: 16px;
+  position: relative;
+  padding: 0.75em 0.75em 1em 0.75em;
+}
+.container .box:hover h1 {
+  color: white;
+}
+.container .box p {
+  font-size: 12px;
+  position: relative;
+  padding: 0 0.5em 0 0.5em;
+}
+.container .box:hover p {
+  color: white;
+}
+
+.category {
+  padding-top: 3%;
+  padding-left: 3%;
+}
+
+.link-to {
+  text-decoration: none;
+}
+/* movie detail page  */
+.moviepage {
+  display: flex;
+  color: white;
+  margin-top: -30px;
+  height: 100vh;
+}
+
+.backdrop {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  border: 3px solid #4bb79e;
+  width: 300px;
+}
+
+.tagline {
+  max-width: 300px;
+  font-size: x-large;
+}
+.title2 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.moviepage h1 {
+  max-width: 60ch;
+}
+
+.moviepage p {
+  max-width: 80ch;
+}
+
+@media (max-width: 500px) {
+  .moviepage {
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+  }
+  .backdrop {
+    margin-top: 30px;
+    width: 200px;
+    height: 300px;
+  }
+  .tagline {
+    font-size: 15px;
+  }
+  .info {
+    width: 100%;
+  }
+}
+.info-box {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.info-box p {
+  font-size: 1.5rem;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.33em;
+}
+.rating img {
+  width: 30px;
+}
+.rating-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.1em;
+  height: 40px;
+}
+.rating-home img {
+  width: 20px;
+}
+#more-info {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #7c808d;
+  border-radius: 20px;
+  padding: 0 5px 0 5px;
+  margin-left: 8px;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 0.33em;
+}
+.stats p {
+  font-size: 1rem;
+}
+
+/* hero section  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hero-container {
+  width: 100vw;
+  height: 30vh;
+  max-width: 100%;
+  background: center / cover no-repeat
+    url("https://designwithred.com/wp-content/uploads/2020/09/42-Best-Movie-Posters-of-2019-DesignwithRed-1200x801.jpg");
+  position: relative;
+}
+
+.hero-text {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 30vh;
+}
+
+.overlay {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+}
+.search-bar {
+  color: black;
+
+  padding: 0.5em 5em;
+  font-size: 1em;
+  border: 1px white solid;
+  background: #f3f3f3;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+.link-search {
+  padding: 0.5em;
+  background: transparent;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid #4bb79e;
+  border-radius: 8px;
+}
+.link-search:hover {
+  background-color: #4bb79e;
+}
