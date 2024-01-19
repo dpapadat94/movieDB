@@ -15,8 +15,6 @@ function Home() {
     fetchMovies();
   }, []);
 
-  console.log(popular);
-
   return (
     <div className="container">
       {popular.map((movie) => {

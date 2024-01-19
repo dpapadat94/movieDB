@@ -15,13 +15,17 @@ function SearchPage() {
       setSearchResults(data.results);
     }
     getSearched();
-  }, [searchResults]);
-  console.log(searchResults);
+  }, [search]);
+
   return (
     <div className="container">
-      {searchResults.map((movie) => {
-        return <MoiveCard movie={movie} key={movie.id} />;
-      })}
+      {searchResults.length > 1 ? (
+        searchResults.map((movie) => {
+          return <MoiveCard movie={movie} key={movie.id} />;
+        })
+      ) : (
+        <h1>No Results found ...</h1>
+      )}
     </div>
   );
 }

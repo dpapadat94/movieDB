@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 import Star from "../assets/star.png";
 
 export default function MoiveCard({ movie }) {
-  const shorten = (string) => {
-    if (string.length > 120) {
-      const shortened = string.substring(0, 120) + "...";
-      return shortened;
+  const fit = (title) => {
+    if (title.length > 18) {
+      const shrunk = title.substring(0, 18) + "...";
+      return shrunk;
     } else {
-      return string;
+      return title;
     }
   };
 
@@ -15,10 +15,19 @@ export default function MoiveCard({ movie }) {
     <NavLink className="link-to" to={`/${movie.id}`}>
       <div className="box">
         <div className="imgbox">
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            alt=""
-          />
+          {movie.poster_path ? (
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt=""
+            />
+          ) : (
+            <img
+              src={
+                "https://cdn.storyboardthat.com/storyboard-srcsets/poster-templates/movie-poster-3.png"
+              }
+              alt="image not found"
+            />
+          )}
         </div>
 
         <div className="rating-home">
@@ -26,7 +35,7 @@ export default function MoiveCard({ movie }) {
           <p>{Math.round(movie.vote_average * 10) / 10}</p>
           <p id="more-info">More Info</p>
         </div>
-        <h1>{movie.title}</h1>
+        <h1>{fit(movie.title)}</h1>
       </div>
     </NavLink>
   );

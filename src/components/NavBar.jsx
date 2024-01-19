@@ -7,7 +7,9 @@ function NavBar() {
       <header>
         <nav>
           <h1>
-            <Link to="/">MOVIE DATABASE</Link>
+            <Link className="logo" to="/">
+              MOVIE DATABASE
+            </Link>
           </h1>
           <SearchBar />
           <div className="nav-links">

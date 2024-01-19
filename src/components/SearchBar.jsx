@@ -9,13 +9,13 @@ function SearchBar() {
   }
 
   return (
-    <div>
+    <div className="search-container">
       <input
         className="search-bar"
         value={search}
         onChange={(e) => handleChange(e)}
         type="text"
-        placeholder="Search for a moive"
+        placeholder="Search for a movie"
       />
       <Link
         className="link-search"

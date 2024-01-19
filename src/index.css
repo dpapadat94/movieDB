@@ -11,7 +11,6 @@ body {
   background: var(--secondary);
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   min-height: 100vh;
 }
 * {
@@ -97,7 +96,7 @@ main {
 }
 
 .container .box:hover::before {
-  top: 90%;
+  top: 88%;
 }
 .container .box .imgbox {
   width: 100%;
@@ -169,24 +168,6 @@ main {
   max-width: 80ch;
 }
 
-@media (max-width: 500px) {
-  .moviepage {
-    width: 100%;
-    padding: 20px;
-    flex-direction: column;
-  }
-  .backdrop {
-    margin-top: 30px;
-    width: 200px;
-    height: 300px;
-  }
-  .tagline {
-    font-size: 15px;
-  }
-  .info {
-    width: 100%;
-  }
-}
 .info-box {
   display: flex;
   align-items: center;
@@ -232,43 +213,11 @@ main {
   font-size: 1rem;
 }
 
-/* hero section  */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.hero-container {
-  width: 100vw;
-  height: 30vh;
-  max-width: 100%;
-  background: center / cover no-repeat
-    url("https://designwithred.com/wp-content/uploads/2020/09/42-Best-Movie-Posters-of-2019-DesignwithRed-1200x801.jpg");
-  position: relative;
-}
-
-.hero-text {
-  z-index: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 30vh;
-}
-
-.overlay {
-  background: #000;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-}
+/* search bar */
 .search-bar {
   color: black;
-
-  padding: 0.5em 5em;
+  width: 300px;
+  padding: 0.5em 1em;
   font-size: 1em;
   border: 1px white solid;
   background: #f3f3f3;
@@ -284,5 +233,81 @@ main {
   border-radius: 8px;
 }
 .link-search:hover {
-  background-color: #4bb79e;
+  background-color: #bcc2c0;
+}
+
+@media (max-width: 1121px) {
+  header nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-content: center;
+  }
+  .nav-links {
+    margin: 0 auto;
+    display: flex;
+    gap: 1em;
+  }
+  header nav h1 {
+    border-bottom: 3px solid var(--primary);
+    text-align: center;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .search-container {
+    margin: 0 auto;
+  }
+  header nav a {
+    text-decoration: none;
+    padding: 2px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  .search-bar {
+    color: black;
+    padding: 0.5em 0.5em;
+    font-size: 1em;
+    border: 1px white solid;
+    background: #f3f3f3;
+    margin-right: 10px;
+    border-radius: 8px;
+    width: 40vw;
+  }
+  .moviepage {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    padding: 20px;
+    width: 100vw;
+  }
+
+  .info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .info-box p {
+    margin: 5px;
+  }
+  .title2 {
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .backdrop {
+    margin: 0 auto;
+    width: 30vw;
+  }
+  .tagline {
+    text-align: center;
+  }
+  .description {
+    text-align: center;
+  }
 }

@@ -5,7 +5,7 @@ function MovieDetail() {
   const { id } = useParams();
 
   const [movie, setMovie] = useState("");
-  console.log(movie);
+
   useEffect(() => {
     async function fetchMovie() {
       const res = await fetch(
@@ -17,7 +17,8 @@ function MovieDetail() {
     }
     fetchMovie();
   }, []);
-  console.log(movie);
+
+  const rounded = Math.round(movie.vote_average * 10) / 10;
 
   return (
     <div className="moviepage">
@@ -33,7 +34,7 @@ function MovieDetail() {
           <div className="info-box">
             <div className="rating">
               <img src={Star} className="starpng" />
-              <p>{Math.round(movie.vote_average * 10) / 10}</p>
+              <p>{movie.vote_average}</p>
             </div>
             <div className="stats">
               <h3>Run Time:</h3>
@@ -45,8 +46,9 @@ function MovieDetail() {
             </div>
           </div>
         </div>
-        <p className="tagline">{`"${movie.tagline}"`}</p>
-        <p>{movie.overview}</p>
+        {movie.tagline ? <p className="tagline">{`"${movie.tagline}"`}</p> : ""}
+
+        <p className="description">{movie.overview}</p>
       </div>
     </div>
   );
